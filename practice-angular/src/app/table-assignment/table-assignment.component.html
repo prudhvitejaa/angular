@@ -1,0 +1,38 @@
+<!-- <p>table-assignment works!</p> -->
+<!-- AG Grid Angular Component -->
+<div id="dropDown">
+    <!-- <div>
+        <select (change)="filterDatabaseSchema($event)">
+            <option value="">---- select a RDBMS---</option>
+            <option *ngFor="let database of filterRdbmsName" [value]="database.dbType">{{ database.dbType }}</option>
+        </select>
+    </div> -->
+    <div>
+        <select (change)="filterDatabaseSchema($event)">
+            <option value="">----select a RDBMS---</option>
+            <option *ngFor="let database of filteredDbtypeArray" [value]="database">{{database}}</option>
+        </select>
+    </div>
+    <div>
+        <select (change)="filterDatabaseTables($event)">
+            <option value="">----select a DB-Schema---</option>
+            <option *ngFor="let database of filterDatabaseName" [value]="database.dataSourceId">{{ database.dbName }}</option>
+        </select>    
+    </div>
+    <div>
+        <select (change) = "columnDefFunction($event)">
+            <option value="">----select a DB Table---</option>
+            <option *ngFor="let table of DatabaseTableFinal" [value]="table.id">{{ table.dsName }}</option>
+        </select> 
+    </div>
+    
+</div>
+<ag-grid-angular
+    style="width: 100%; height: 100%"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData"
+    [rowSelection]="'multiple'"
+    [animateRows]="true"
+  ></ag-grid-angular>
