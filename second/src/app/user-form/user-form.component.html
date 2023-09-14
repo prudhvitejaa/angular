@@ -1,0 +1,22 @@
+<form class="form" (ngSubmit)="submit()" [formGroup]="userForm">
+    <div class="row m-2">
+        <div class="col">
+            <input type="text" formControlName="name" class="form-control" name="name" placeholder="Name">
+        </div>
+        <div class="col">
+            <input type="text" formControlName="userName" class="form-control" name="userName" placeholder="UserName">
+        </div>
+    </div>
+    <div class="row m-2" formGroupName="address">
+        <div class="col">
+            <input type="tel" formControlName="contact" class="form-control" name="contact" placeholder="Contact">
+        </div>
+        <div class="col">
+            <input type="email" formControlName="email" class="form-control" name="email" placeholder="Email">
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary m-2">Save</button>
+    </div>
+</form>
+

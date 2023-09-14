@@ -1,0 +1,21 @@
+<form class="form" #movieData="ngForm" (ngSubmit)="formSubmit(movieData)" >
+    <div class="row m-2">
+        <div class="col">
+            <input type="text" class="form-control" name="movieName" placeholder="MovieName" ngModel #MovieName="ngModel">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="actorName" placeholder="ActorName" ngModel #actorName="ngModel">
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col">
+            <input type="text" class="form-control" name="actressName" placeholder="ActressName" ngModel #actressName="ngModel">
+        </div>
+        <div class="col">
+            <input type="number" class="form-control" name="rating" placeholder="Rating" ngModel #rating="ngModel">
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary m-2">Save</button>
+    </div>
+</form>

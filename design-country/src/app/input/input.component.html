@@ -1,0 +1,10 @@
+<div [formGroup]="formGroup">
+    <input 
+    class="form-control"
+    type="text"
+    [formControlName]="formControlName"
+    [name]="formControlName"
+    [placeholder]="placeholderValue"
+    (input)="onInputChange($event)"
+   >
+</div>

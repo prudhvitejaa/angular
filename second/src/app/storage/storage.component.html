@@ -1,0 +1,49 @@
+<form [formGroup]="storageForm" (ngSubmit)="saveStorageForm()">
+    <div class="row m-2">
+        <div class="col">
+            <input formControlName="storageType" class="form-control" type="text" name="storageType" placeholder="Storage Type">
+            <div *ngIf="getFormControl('storageType')['touched'] && getFormControl('storageType')['invalid']">
+                <h6 *ngIf="getFormControl('storageType')['errors']['required']" class="alert alert-danger">Storage type is required</h6>
+                <h6 *ngIf="getFormControl('storageType')['errors']['minlength']" class="alert alert-danger">Min 3 Characters required</h6>
+            </div>
+        </div>
+        <div class="col">
+            <input formControlName="storageAccessKey" class="form-control" type="text" name="storageAccessKey" placeholder="storage AccessKey">
+            <div *ngIf="getFormControl('storageAccessKey')['touched'] && getFormControl('storageAccessKey')['invalid']">
+                <h6 *ngIf="getFormControl('storageAccessKey')['errors']['required']" class="alert alert-danger">AccessKey is required</h6>
+                <h6 *ngIf="getFormControl('storageAccessKey')['errors']['minlength']" class="alert alert-danger">Min 6 Characters required</h6>
+                <h6 *ngIf="getFormControl('storageAccessKey')['errors']['pattern']" class="alert alert-danger">Special Characters required</h6>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col">
+            <input formControlName="storageSecretKey" class="form-control" type="text" name="storageSecretKey" placeholder="storageSecretKey">
+            <div *ngIf="getFormControl('storageSecretKey')['touched'] && getFormControl('storageSecretKey')['invalid']">
+                <h6 *ngIf="getFormControl('storageSecretKey')['errors']['required']" class="alert alert-danger">SecretKey is required</h6>
+                <h6 *ngIf="getFormControl('storageSecretKey')['errors']['minlength']" class="alert alert-danger">Min 8 Characters required</h6>
+            </div>
+        </div>
+        <div class="col">
+            <input formControlName="storageBucketName" class="form-control" type="text" name="storageBucketName" placeholder="storageBucketName">
+            <div *ngIf="getFormControl('storageBucketName')['touched'] && getFormControl('storageBucketName')['invalid']">
+                <h6 *ngIf="getFormControl('storageBucketName')['errors']['required']" class="alert alert-danger">BucketName is required</h6>
+                <h6 *ngIf="getFormControl('storageBucketName')['errors']['minlength']" class="alert alert-danger">Min 5 Characters required</h6>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col">
+            <input formControlName="storageRegion" class="form-control" type="text" name="storageRegion" placeholder="storageRegion">
+            <div *ngIf="getFormControl('storageRegion')['touched'] && getFormControl('storageRegion')['invalid']">
+                <h6 *ngIf="getFormControl('storageRegion')['errors']['required']" class="alert alert-danger">Region is required</h6>
+                <h6 *ngIf="getFormControl('storageRegion')['errors']['minlength']" class="alert alert-danger">Min 3 Characters required</h6>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col">
+            <button class="btn btn-primary m-2">Save</button>
+        </div>
+    </div>
+</form>

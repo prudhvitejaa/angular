@@ -1,0 +1,91 @@
+<div class="container">
+    <form class="form" (ngSubmit)="submit()" [formGroup]="personDetails" >           
+        <div class="personal-details-container">PersonalDetails</div>
+    
+        <div class="row mb-3"  >
+            <div class="col">            
+                <input class="form-control" type="text" name="FirstName" placeholder="First Name" formControlName="FirstName" >
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" name="LastName" placeholder="Last Name" formControlName="LastName">
+            </div>
+        </div>
+        <div class="row">
+    
+            <div class="col">
+                <input class="form-control"type="number" name="contact" placeholder="contact" formControlName="contact">
+            </div>
+            <div class="col">
+                <input class="form-control" type="email" name="email" placeholder="email" formControlName="email">
+            </div>
+        </div>
+        <!-- EducationArrayDetails -->
+   
+    
+        <div formArrayName="education">
+            <div *ngFor="let obj of getEducation().controls,let objPosition=index">
+                <div [formGroupName]="objPosition">
+                        <div class="education-header d-flex justify-content-between align-items-center">
+                            <div>
+                                EducationDetails {{objPosition+1}}
+                            </div>
+                            <div class="buttons-cointainer d-flex justify-content-between">
+                                <div *ngIf="objPosition === 0">
+                                    <button class="btn btn-success" (click) = "addAddress()"> +Add</button>
+                                </div>
+                                <div *ngIf="objPosition > 0"class="delete-button">
+                                    <button class="btn btn-danger" (click)="deleteEducation(objPosition)">Delete</button>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="row mb-3" >
+                            <div class="col">
+                                <input  class="form-control" type="name" name="DegreeName" placeholder="DegreeName" formControlName="DegreeName">
+                            </div>
+                            <div class="col">
+                                <input class="form-control" type="name" name="type" placeholder="type" formControlName="type">
+                            </div>
+                        </div>
+                
+                        <div class="row mb-3">
+                    
+                            <div class="col">
+                                <input class="form-control" type="number" name="passingyear" placeholder="passingyear" formControlName="passingyear">
+                            </div>
+                            <div class="col">
+                                <input class="form-control" type="number" name="marksObtained" placeholder="marksObtained" formControlName="marksObtained">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- AddressDetails -->
+            <div class="address-header-container">Address</div>
+            <div class="address-container" formGroupName="address">
+                <div class="row mb-3"  >
+                    <div class="col">
+                        <input class="form-control" type="text" name="city" placeholder="city" formControlName="city">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" name="state" placeholder="state" formControlName="state"> 
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input class="form-control" type="text" name="country" placeholder="country" formControlName="country">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" name="pincode" placeholder="pincode" formControlName="pincode">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <button type="button" (click)="submit()" class="btn btn-primary">save</button>                
+                </div>
+            </div>
+    </form>
+</div>

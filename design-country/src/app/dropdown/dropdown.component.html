@@ -1,0 +1,12 @@
+<div [formGroup]="formGroup">
+    <select class="form-control" [formControlName]="formControlName"
+    >
+        <option value="" disabled>----select state-----</option>
+        <option *ngFor= "let element of countryList" [value]="element" >
+            {{element}}
+        </option>
+    </select>
+</div>
+
+
+

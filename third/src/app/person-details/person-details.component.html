@@ -1,0 +1,79 @@
+<form class="form" (ngSubmit)="submit()" [formGroup]="personDetails">
+    <div class="row m-2">
+        <div class="col">
+            <input type="text" formControlName="firstName" class="form-control" name="firstName" placeholder="FirstName">
+        </div>
+        <div class="col">
+            <input type="text" formControlName="lastName" class="form-control" name="lastName" placeholder="LastName">
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col">
+            <input type="tel" formControlName="contact" class="form-control" name="contact" placeholder="Contact">
+        </div>
+        <div class="col">
+            <input type="email" formControlName="email" class="form-control" name="email" placeholder="Email">
+        </div>
+    </div>
+
+
+    <div class="row m-2" formArrayName="educationalDetails">
+        <div *ngFor="let obj of getEducationalDetails().controls, let objPosition=index">
+            <div [formGroupName]="objPosition">
+            
+            <div class="educational-header">
+                <div>Educational Details {{objPosition+1}}</div>
+                <div><button>delete</button></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" formControlName="degreeName" class="form-control" name="degreeName" placeholder="DegreeName">
+                </div>
+                <div class="col">
+                    <input type="text" formControlName="type" class="form-control" name="type" placeholder="Type">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="number" formControlName="passingYear" class="form-control" name="passingYear" placeholder="Passing Year">
+                </div>
+                <div class="col">
+                    <input type="number" formControlName="marksObtained" class="form-control" name="marksObtained" placeholder="Marks Obtained">
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<div class="m-4">
+    <button (click)="addEducationForm()">+Add</button>
+</div>
+
+
+<div formGroupName="address">
+    <div class="row m-2" >
+        <div>Address</div>
+        <div class="col">
+            <input type="text" formControlName="country" class="form-control" name="country" placeholder="Country">
+        </div>
+        <div class="col">
+            <input type="text" formControlName="pincode" class="form-control" name="pincode" placeholder="Pincode">
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col">
+            <input type="text" formControlName="city" class="form-control" name="city" placeholder="City">
+        </div>
+        <div class="col">
+            <input type="text" formControlName="state" class="form-control" name="state" placeholder="State">
+        </div>
+    </div>
+</div>
+
+
+    <div>
+        <button class="btn btn-primary m-2">Save</button>
+    </div>
+</form>
+
+

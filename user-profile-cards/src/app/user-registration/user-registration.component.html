@@ -1,0 +1,28 @@
+<form class="form form-group">
+    <div class="row m-2">
+        <div class="col">
+            <input class="form-control"type="text" placeholder="username" name="name" ngModel #username="ngModel">
+        </div>
+        <div class="col">
+            <input class="form-control"type="email" placeholder="email" name="email" ngModel #email = "ngModel">
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col">
+            <input class="form-control"type="number" placeholder="contact" name="contact" ngModel #contact="ngModel">
+        </div>
+        <div class="col">
+            <input class="form-control"type="password" placeholder="password" name="password" ngModel #password="ngModel">
+        </div>
+    </div>
+    <div class=" row country-div m-2">
+        <select class="form-control" name="country" ngModel #country="ngModel">
+            <option value="india"> india</option>
+            <option value="usa"> USA</option>
+            <option value="england"> England</option>
+        </select>
+    </div>
+    <div class="row">
+            <button class="btn btn-primary" type="button">save</button>
+    </div>
+</form>

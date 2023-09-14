@@ -1,0 +1,38 @@
+<form [formGroup]="channelForm" (ngSubmit)="formSubmit()">
+
+    <div class="row m-2">
+        <div class="col">
+            Channel<select (change)="getChanneltype($event)" formControlName="channelName" class="form-select" placeholder="Channel" name="channelName">
+                <option>--Select Channel Name--</option>
+                <option [value]="data" *ngFor="let data of channelList">{{data}}</option>
+                
+            </select>
+        </div>
+        <div class="col">
+            Channel Type<select formControlName="channelType" class="form-select" placeholder="ChannelType" name="channelType">
+                <option>--Select Channel Type--</option>
+                <option *ngFor="let data of cType">{{data['type']}}</option>
+                <!-- <option *ngFor="let data of cType">{{data['type1']}}</option> -->
+            </select>
+        </div>
+    </div>
+    
+    <div class="row m-2">
+        <div class="col">
+            Name<input type="text" class="form-control" placeholder="Name" name="name" formControlName="name">
+        </div>
+        <div class="col">
+            UserName<input type="text" class="form-control" placeholder="UserName" name="userName" formControlName="userName">
+        </div>
+        <div class="col">
+            Password<input type="password" class="form-control" placeholder="Password" name="password" formControlName="password">
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <div class="col">
+            <button class="btn btn-primary m-2">Save</button>
+        </div>
+    </div>
+
+</form>

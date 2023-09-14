@@ -1,0 +1,59 @@
+<html>
+    <body>
+
+        <form class="form" #userForm=ngForm (ngSubmit)="submitUserForm(userForm)">
+
+            <div class="row m-2">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Name" name="name" ngModel #name="ngModel"
+                    required="true"
+                    minlength="3"
+                    pattern="[a-zA-Z]{1,}"
+                    (mouseenter)="sendFormControl(name)"
+                    (change)="sendFormControl(name)">
+                    <div class="alert alert-danger" role="alert" *ngIf="name.touched && name.invalid">
+                        <span *ngIf="name.errors && name.errors['required']">Required</span>
+                        <span *ngIf="name.errors && name.errors['minlength']">Min 3 characters required</span><br>
+                        <span *ngIf="name.errors && name.errors['pattern']">Only Characters</span>
+                      </div>
+                </div>
+                <div class="col">
+                     <input type="email" class="form-control" placeholder="Email" name="email" ngModel #email="ngModel"
+                     required="true"
+                     (mouseenter)="sendFormControl(name)"
+                     (change)="sendFormControl(name)">
+                     <div class="alert alert-danger" role="alert" *ngIf="email.touched && email.invalid">
+                        <span *ngIf="email.errors && email.errors['required']">Required</span> 
+                     </div>
+                </div>
+            </div>
+
+            <div class="row m-2">
+                <div class="col">
+                    <input type="tel" class="form-control" placeholder="Contact" name="mobileNumber" ngModel #mobileNumber="ngModel">
+                </div>
+                <div class="col">
+                    <input type="password" class="form-control" placeholder="Password" name="password" ngModel #password="ngModel">
+                </div>
+            </div>
+
+            <div class="row m-2">
+                <div class="col">
+                    <select id="inputState" class="form-select" placeholder="Country" name="country" ngModel #country="ngModel">
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row m-2">
+                <div class="col">
+                    <button class="btn btn-primary m-2">Save</button>
+                </div>
+            </div>
+
+        </form>
+
+     </body>
+</html>

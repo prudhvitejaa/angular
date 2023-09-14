@@ -1,0 +1,24 @@
+<button (click)="submit()">Submit</button>
+<div *ngFor="let user of arrayList">
+  <div class="card" style="width: 18rem;">
+    
+    <div class="card-header"><h5 class="card-title">User Info</h5></div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <h6>Name:{{user.name}}</h6>
+          <h6>Email:{{user.email}}</h6>
+          <h6>Qualification:{{user.qualification}}</h6>
+          <h6>Experience:{{user.experience}}</h6>
+          <h6>Department:{{user.department}}</h6>
+          <h6 *ngFor="let add of user['address']"><h6 *ngIf="add['isCurrent']===true">City :{{add.city}}</h6>
+        </h6>
+        </div>
+        <div class="col">
+          <app-image [imagePath]="user['profilepic']"></app-image>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  </div>

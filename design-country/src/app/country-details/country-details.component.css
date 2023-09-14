@@ -1,0 +1,7 @@
+header h2{
+    text-align: center;
+    text-transform: capitalize;
+    background-color: rgba(11,94,215,0.9);
+    color: whitesmoke;
+    padding: 0.5rem;
+}

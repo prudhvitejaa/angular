@@ -1,0 +1,62 @@
+
+<header><h2>country details form</h2></header>
+<div class="container">
+    <form class="form m-3" [formGroup]="countryDetailsForm" (ngSubmit)="onSave()">
+        <div class="row m-3">
+            <div class="col">
+                <app-input
+                [formControlName] = "'countryName'"
+                [formGroup]="countryDetailsForm"
+                [placeholderValue]="'enter country name'"
+                >
+                </app-input>
+            </div>
+
+            <div class="col">
+                <app-number-box
+                [formGroup]="countryDetailsForm"
+                [placeholderValue]="'enter total area'"
+                [formControlName] ="'totalArea'"
+                >
+               </app-number-box>
+            </div>
+        </div>
+         <div class="row m-3">
+            <div class="col">
+                <app-input
+                [formControlName] ="'capitalName'"
+                [formGroup]="countryDetailsForm"
+                [placeholderValue]="'enter capital name'"
+                >
+                </app-input>
+            </div>
+            <div class="col">
+                <app-number-box
+                [formControlName] ="'population'"
+                [formGroup]="countryDetailsForm"
+                [placeholderValue]="'enter population'"
+                >
+               </app-number-box>
+            </div>
+        </div>
+       <div class="row m-3">
+            <div class="col">
+                <app-dropdown
+                    [formControlName]="'state'"
+                    [formGroup]="countryDetailsForm"
+                    [countryList]="['AP','TN','UP']"
+                >
+                </app-dropdown>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
