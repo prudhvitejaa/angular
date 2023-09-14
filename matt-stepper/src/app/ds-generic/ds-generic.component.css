@@ -1,0 +1,23 @@
+.tablesInfo,.tableDetails{
+    height: 70vh;
+}
+.heading-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+.heading-content-element{
+    width: 20rem;
+}
+.table-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+  }
+  
+  .table-radio-button {
+    margin: 5px;
+  }
+  .unordered-list{
+    list-style: none;
+  }

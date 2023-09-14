@@ -1,0 +1,51 @@
+<div class="drop-boxes">
+    <mat-form-field>
+        <mat-label>Choose an option</mat-label>
+        <mat-select (valueChange)="tableOneSelection($event)">
+          <mat-option [value]="table" *ngFor="let table of entityList">{{table}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Choose an option</mat-label>
+        <mat-select (valueChange)="tableOneColumnSelection($event)">
+          <mat-option [value]="column" *ngFor="let column of columnListForTableOne">{{column.columnName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Choose an option</mat-label>
+        <mat-select (valueChange)="tableTwoSelection($event)">
+          <mat-option [value]="table" *ngFor="let table of entityList">{{table}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Choose an option</mat-label>
+        <mat-select (valueChange)="tableTwoColumnSelection($event)">
+          <mat-option [value]="column" *ngFor="let column of columnListForTableTwo">{{column.columnName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Choose an option</mat-label>
+        <mat-select (valueChange)="selectJoin($event)">
+          <mat-option [value]="join" *ngFor="let join of joinList">{{join}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <button mat-raised-button color="primary" (click)="addDataToTable()">+Add</button>
+    </div>
+</div>
+
+
+<div class="grid-container">
+    <app-grid
+        [gridColumn]="columnDefs"
+        [gridData]="outputObjectArray"
+        [gridConfig]="defaultColDef"
+    >
+    </app-grid>
+
+</div>
+

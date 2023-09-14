@@ -1,0 +1,10 @@
+.steppers-button{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+.steppers-button-prev{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+}

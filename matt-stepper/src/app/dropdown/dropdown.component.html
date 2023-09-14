@@ -1,0 +1,4 @@
+<select (change)="selectedOption($event)">
+    <option>-----select an option-----</option>
+    <option [value]="option" *ngFor="let option of optionsArray">{{option}}</option>
+</select>

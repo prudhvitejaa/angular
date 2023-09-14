@@ -1,0 +1,9 @@
+.grid-container{
+    height:60vh;
+}
+
+.drop-boxes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}

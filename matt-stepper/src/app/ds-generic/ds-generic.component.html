@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-4 tablesInfo">
+        <mat-tab-group animationDuration="0ms" [(selectedIndex)]="selectedTabIndex">
+            <mat-tab label="Table">
+                <mat-radio-group
+                    aria-labelledby="table-radio-group-label"
+                    class="table-radio-group"
+                    (change)="selectTableMethod($event)"
+                    >
+                    <mat-radio-button class="table-radio-button" *ngFor="let table of entityList" [value]="table">
+                        {{table}}
+                    </mat-radio-button>    
+                </mat-radio-group>
+            </mat-tab>
+
+
+
+            <mat-tab label="Columns">
+                <span class="example-list-section">
+                    <ul class="unordered-list">
+                      <li *ngFor="let column of columnList">
+                        <mat-checkbox (change)="seletedColumnList($event)" [value]="column">
+                          {{column.columnName}}
+                        </mat-checkbox>
+                      </li>
+                    </ul>
+                  </span>
+            </mat-tab>
+        </mat-tab-group>
+        <!-- <div>Your selected table is: {{selectedTable}}</div> -->
+
+    </div>
+
+    <div class="col-8 tableDetails">
+        <app-grid
+        [gridColumn]="columnDefs"
+        [gridData]="selectedColumns"
+        [gridConfig]="defaultColDef"
+        ></app-grid>
+    </div>
+
+</div>
+
+  

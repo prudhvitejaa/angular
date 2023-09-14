@@ -1,0 +1,40 @@
+<!-- <app-stepper></app-stepper> -->
+<!-- <app-data-service></app-data-service> -->
+<h1 appCustom>angular custom directive</h1>
+<ul>
+     <!-- <li *ngFor="let p of productList">
+       <span *ngIf="p.price < 1000"> {{p.name}}</span>
+    </li>
+
+    <span *ngFor="let p of productList">
+        <li *ngIf="p.price < 1000"> {{p.name}}</li>
+    </span> -->
+
+    <!-- <ng-template *ngFor="let p of productList">
+            <li *ngIf="p.price < 1000"> {{p.name}}</li>
+    </ng-template> -->
+
+    <ng-container *ngFor="let p of productList">
+        <li [ngClass]="{'active':p.price ==100}" *ngIf="p.price < 1000; else elseLogic"> {{p.name}}</li>
+        <ng-template #elseLogic>
+                <li> <span [ngStyle]="{'color':'red'}">out of stock</span> </li>
+        </ng-template>
+    </ng-container>
+</ul>
+
+<select  (change)="selectedSubject($event)">
+    <option [value]="subject" *ngFor="let subject of subjectList">{{subject}}</option> 
+</select>
+
+<div [ngSwitch]="selectedOption">
+    <div *ngSwitchCase="'angular'">
+        <span>angular selected</span>
+    </div>
+    <div *ngSwitchCase="'spring'">
+        <span>spring selected</span>
+
+    </div>
+    <div *ngSwitchCase="'sql'">
+        <span>sql selected</span>
+    </div>
+</div>
