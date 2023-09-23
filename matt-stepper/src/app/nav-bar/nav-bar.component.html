@@ -1,0 +1,36 @@
+    <!-- <mat-toolbar>
+      <span>My Application</span>
+      <a routerLink="/report/123">report</a>
+      <a routerLink="/survey">survey</a>
+      <a routerLink="/upload">doc-upload</a>
+      <a routerLink="/s3-config">s3-config</a>
+      <a routerLink="/db-config">db-config</a>
+      <a routerLink="/cloud-config">cloud-config</a>
+    </mat-toolbar> -->
+<button mat-button [matMenuTriggerFor]="aboveMenu">services</button>
+<mat-menu #aboveMenu="matMenu" yPosition="above">
+  <button mat-menu-item>
+    <a routerLink="/report/123">report</a>
+  </button>
+  <button mat-menu-item>
+    <a routerLink="/survey">survey</a>
+  </button>
+  <button mat-menu-item>
+    <a routerLink="/upload">doc-upload</a>
+  </button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="belowMenu">integration</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item>
+        <a routerLink="/integration/s3-config">s3-config</a>
+    </button>
+      <button mat-menu-item>
+        <a routerLink="/integration/db-config">db-config</a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="/integration/cloud-config">cloud-config</a>
+      </button>
+</mat-menu>
+
+<router-outlet></router-outlet>

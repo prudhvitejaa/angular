@@ -19,11 +19,16 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
-
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
 import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
 import { CustomDirective } from './custom.directive';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { BaseComponent } from './base/base.component';
+import { ReportComponent } from './report/report.component';
+import { SurveyComponent } from './survey/survey.component';
+import { DocumentUploadComponent } from './document-upload/document-upload.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +40,11 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     AngularDirectivesComponent,
     CustomDirective,
     DropdownComponent,
+    BaseComponent,
+    ReportComponent,
+    SurveyComponent,
+    DocumentUploadComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +58,9 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     MatCheckboxModule,
     MatRadioModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule,
+    MatMenuModule
     
   ],
   providers: [],
