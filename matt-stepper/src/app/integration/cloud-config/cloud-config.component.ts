@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-cloud-config',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./cloud-config.component.css']
 })
 export class CloudConfigComponent {
+  constructor(private dbListObject:CommonService){
 
+  }
+
+  ngOnInit():void{
+    console.log(this.dbListObject.getDbConfigDetails());
+  }
 }
