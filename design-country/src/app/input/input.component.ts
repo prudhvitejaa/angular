@@ -26,7 +26,7 @@ export class InputComponent implements ControlValueAccessor{
 
   value: string = ''; // Define a property to hold the input value
 
-  // Implement ControlValueAccessor methods
+  // Implement ControlValueAccessor interface methods
   onChange: any = () => {};
   onTouched: any = () => {};
 

@@ -7,4 +7,24 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  menuList:any = [];
+
+    dmObject = {
+                  dm:[
+                        {
+                          resourceName:'Data Source',
+                          url:'/data-management/data-source-list'
+                        },
+                        {
+                          resourceName:'Data Service',
+                          url:'/data-management/data-service-list'
+                        }
+                    ]
+
+               }
+
+    ngOnInit():void{
+      this.menuList = Object.values(this.dmObject)[0];
+      // console.log(this.menuList);
+    }
 }

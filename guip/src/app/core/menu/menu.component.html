@@ -1,1 +1,14 @@
-<p>menu works!</p>
+    <mat-toolbar>
+            <div class="app-title">
+                <span>My Application</span>
+            </div>
+          
+            <div class="menu-options">
+                <button mat-button [matMenuTriggerFor]="menu">Data Management</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item *ngFor="let option of menuList">
+                        <a [routerLink]="option.url">{{option.resourceName}}</a>
+                    </button>
+                </mat-menu>
+            </div>
+    </mat-toolbar>

@@ -1,1 +1,72 @@
-<p>data-source-form works!</p>
+<h1 mat-dialog-title>Data Source Create</h1>
+<div mat-dialog-content class="container">
+
+<form class="example-form" [formGroup]="dbSourceForm">
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Db Type</mat-label>
+                    <input matInput 
+                    formControlName="dbType"
+                    name="dbType">
+                  </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Db Name</mat-label>
+                    <input matInput
+                    formControlName="dbName"
+                    name="dbName"   
+                    >
+                  </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>url</mat-label>
+                    <input matInput
+                    formControlName="url"
+                    name="url"   
+                    >
+                  </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>port</mat-label>
+                    <input matInput
+                    formControlName="portNo"
+                    name="portNo"   
+                    >
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>user name</mat-label>
+                    <input matInput
+                    formControlName="userName"
+                    name="userName"   
+                    >
+                  </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>password</mat-label>
+                    <input matInput
+                    formControlName="password"
+                    name="password"   
+                    >
+                  </mat-form-field>
+            </div>
+        </div>     
+</form>
+      
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close >cancel</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="onSave()">save</button>
+</div>
+
