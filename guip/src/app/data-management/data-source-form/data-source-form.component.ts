@@ -27,7 +27,7 @@ export class DataSourceFormComponent {
     })
   }
 
-  
+
   onSave(){
     this.dbServiceRef.saveData(this.dbSourceForm.value);
 
@@ -79,9 +79,7 @@ export class DataSourceFormComponent {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     const currentUrl = this.router.url;
     this.router.navigateByUrl('/', { skipLocationChange: true })
-    .then(() => {
-                this.router.navigate([currentUrl]);
-      });
+    .then(() => this.router.navigate([currentUrl]));
 
   }
 
